@@ -5,26 +5,45 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+//==========Mapas=========================================
+import { AgmCoreModule } from '@agm/core';
+// ------------------pages ---------------------------
+import { GuardadosPage, HomePage, MapaPage , TabsPage } from "../pages/index.paginas";
+//---------------------plugins --------------------
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
+
+
+// ----------------- provider --------------------
+import { HistorialProvider } from '../providers/historial/historial';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+     GuardadosPage, HomePage, MapaPage , TabsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBXntwplbrp2AoiEodousH4UkpyYNL1r4w'
+    })
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    GuardadosPage, HomePage, MapaPage , TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    BarcodeScanner,
+    InAppBrowser,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HistorialProvider
   ]
 })
 export class AppModule {}
