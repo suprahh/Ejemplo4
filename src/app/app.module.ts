@@ -12,7 +12,8 @@ import { GuardadosPage, HomePage, MapaPage , TabsPage } from "../pages/index.pag
 //---------------------plugins --------------------
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-
+import { Contacts } from '@ionic-native/contacts';
+import { EmailComposer } from "@ionic-native/email-composer";
 
 
 // ----------------- provider --------------------
@@ -42,6 +43,8 @@ import { HistorialProvider } from '../providers/historial/historial';
     SplashScreen,
     BarcodeScanner,
     InAppBrowser,
+    Contacts,
+    EmailComposer,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HistorialProvider
   ]

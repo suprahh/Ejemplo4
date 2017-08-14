@@ -28,9 +28,21 @@ export class HomePage {
 
 
 if (!this.platform.is('cordova')) {
-  this._historialProvider.agregarHistorial("http://google.com");
-  
-  return;
+  //this._historialProvider.agregarHistorial("http://google.com");
+  //this._historialProvider.agregarHistorial("geo:-33.556865,-70.586787");
+ /* this._historialProvider.agregarHistorial(`BEGIN:VCARD
+VERSION:2.1
+N:Kent;Clark
+FN:Clark Kent
+ORG:
+TEL;HOME;VOICE:12345
+TEL;TYPE=cell:67890
+ADR;TYPE=work:;;;
+EMAIL:clark@superman.com
+END:VCARD`);*/
+ this._historialProvider.agregarHistorial("MATMSG:TO:carlos.gonzalezp838@gmail.com;SUB:prueba;BODY:hola esto es una prueba;;");
+return;
+    
 }
     this.barcodeScan.scan().then((barcodeData) => {
  // si sale todo bien

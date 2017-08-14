@@ -12,12 +12,20 @@ export class scanData{
         this.tipo = "http";
 
     }
-   if (texto.startsWith("map")) {
+  else if (texto.startsWith("geo")) {
         this.tipo = "Ubicacion";
-   } else {
-        this.tipo = "no definido";
+   } else if(texto.startsWith("BEGIN:VCARD")) {
+        
+    this.tipo = "contacto";
     
-   }
+    
+   }else if(texto.startsWith("MATMSG"))
+{
+    this.tipo = "email"
+}
+else{
+    this.tipo = "no definido";
+}
     
         
    }
